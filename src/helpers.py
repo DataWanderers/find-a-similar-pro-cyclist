@@ -24,7 +24,7 @@ def prepare_embeddings(df):
     arr_emb = df_emb.values.astype(np.float32)  # should be an array
     arr_emb = np.ascontiguousarray(arr_emb)  # should be c-contiguous
 
-    # prepare FAISS index
+    # prepare faiss index
     index = faiss.IndexFlatL2(arr_emb.shape[1])
 
     # get cleaned characteristics columns
@@ -50,7 +50,7 @@ def update_index(index, arr_emb, df_meta, age_max, countries):
 
 def find_closest_riders(index, arr_emb, rider, riders_all, k=5):
     # get rider info to compare against
-    rider_i = riders_all.index(rider)  # list index, has nothing to do with the FAISS library
+    rider_i = riders_all.index(rider)  # list index, has nothing to do with the faiss library
     rider_i_emb = arr_emb[[rider_i]]
 
     # get distances (D) and indices (I)

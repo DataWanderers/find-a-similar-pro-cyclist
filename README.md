@@ -35,4 +35,4 @@ Not going to lie, the app **is** pretty ugly. I didn't bother to make it look ni
 
 ## Cool?
 
-If you are interested in expanding the logic, or improving the app('s) layout, get in touch!
+If you are interested in expanding the logic, or improving the app('s layout), get in touch!
