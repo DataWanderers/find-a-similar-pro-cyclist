@@ -4,6 +4,7 @@ from src.helpers import load_data, prepare_meta, prepare_embeddings, \
     update_index, find_closest_riders, make_rider_table, make_output_table
 
 app = Dash(__name__)
+server = app.server
 
 ############################## load & prepare data
 df = load_data()
@@ -21,11 +22,11 @@ app.layout = html.Div([
 
         html.Div([
             html.H2("Find similar pro cyclists"),
-            html.P("This is a tiny tool to find similar cyclists given a chosen rider. "
-                   "You can limit the pool based on age and country of origin. "
-                   "The data come from a community-created database for the game Pro Cycling Manager. "
-                   ),
-            html.P("Find more info on GitHub here. Have fun!")
+            dcc.Markdown("This is a tiny tool to find similar cyclists given a chosen rider. "
+                         "You can limit the pool based on age and country of origin. "
+                         "The data come from a community-created database for the game Pro Cycling Manager. "
+                         "Find more info on GitHub [here](https://github.com/DataWanderers/find-a-similar-pro-cyclist). "
+                         "Have fun!")
         ], style={"width": "45%"})
 
     ]),
@@ -59,14 +60,16 @@ app.layout = html.Div([
                 dcc.Input(
                     id="n_cyclists",
                     type="number",
-                    value=5
+                    value=5,
+                    min=1
                 )], style={"width": "12%", "display": "inline-block", "vertical-align": "top"}),
             html.Div([
                 html.H4("Maximum age"),
                 dcc.Input(
                     id="max_age",
                     type="number",
-                    value=29
+                    value=29,
+                    min=18
                 )], style={"width": "12%", "display": "inline-block", "vertical-align": "top"})
         ], style={"padding-bottom": "15px"})
 
