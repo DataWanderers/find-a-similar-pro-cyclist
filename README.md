@@ -1,10 +1,11 @@
 ## What?
-A tiny [app](nothing-here-yet) to find similar cyclists to chosen rider. The selection can be filtered based on age and country of origin.
+A tiny [app](nothing-here-yet) to find similar cyclists given a chosen rider. The selection can be filtered based on age and country of origin.
 
 ## Why?
 This little tool has several applications:
 - Gaming (e.g. Pro Cycling Manager or Wielermanager)
-- It can be used for transfers (to replace a certain rider), or for scouting (to find the next talent within a certain region)
+- Transfers (to replace a certain rider)
+- Scouting (to find the next talent within a certain region)
 - You can simply use it out of curiosity
 
 There are of course much more advanced tools to use for above purposes, but it can provide quick and initial guidance.
@@ -12,7 +13,7 @@ There are of course much more advanced tools to use for above purposes, but it c
 ## How?
 
 ### Data
-The data come from the final community-made WorldDB 2021 database for the game Pro Cycling Manager (PCM) 2020. It can be downloaded from the Steam Workshop. Other databases (and for other PCM versions), with stats that would be equally interesting, can be found when you register to [pcmdaily.com](https://pcmdaily.com/). 
+The data come from the final community-made WorldDB 2021 database for the game Pro Cycling Manager (PCM) 2020. It can be downloaded from the Steam Workshop. Other databases (and for other PCM versions), with stats that would be equally interesting, can be found when you register on [pcmdaily.com](https://pcmdaily.com/).
 
 In the database, each rider has 13 characteristics representing various facets of cycling (such as climbing, sprinting, cobblestones, and so on). These stats have been extracted to Excel using this [tool](https://pcmdaily.com/infusions/pro_download_panel/download.php?did=1108), and are the sole basis for comparing riders.
 
