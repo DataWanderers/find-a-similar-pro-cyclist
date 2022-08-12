@@ -31,7 +31,7 @@ My initial attempt was with the [FAISS library](https://github.com/facebookresea
 
 The tool is a **Python Dash app**. It is my first, and I just started with the official [tutorial](https://dash.plotly.com/installation), and then modified along until I reached my desired outcome. My development environment was PyCharm.
 
-It is made available on a free [Heroku](https://www.heroku.com/) server. I followed these [steps](https://www.angela1c.com/posts/2021/09/deploying-dash-apps-to-heroku/).
+It is made available on a free [Heroku](https://www.heroku.com/) server. I followed these [steps](https://www.angela1c.com/posts/2021/09/deploying-dash-apps-to-heroku/), but had to do some obligatory troubleshooting to get it up and running.
 
 Not going to lie, the app *is* pretty ugly. I didn't bother to make it look nicer. Functionality first! To make it prettier, [this](https://dash-bootstrap-components.opensource.faculty.ai) would be a good resource I think.
 
