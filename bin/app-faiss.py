@@ -1,7 +1,7 @@
 from dash import Dash, dcc, html, Input, Output
 from dash import dash_table as dt
 from src.helpers import load_data, prepare_meta, prepare_embeddings, \
-    get_pop_indices, find_closest_riders, make_rider_table, make_output_table
+    update_index, find_closest_riders, make_rider_table, make_output_table
 
 app = Dash(__name__)
 server = app.server
@@ -9,7 +9,7 @@ server = app.server
 ############################## load & prepare data
 df = load_data()
 df_meta = prepare_meta(df)
-arr_emb, features = prepare_embeddings(df)
+arr_emb, index, features = prepare_embeddings(df)
 
 RIDERS = df_meta["name"].tolist()
 COUNTRIES = df_meta["country"].unique().tolist()
@@ -94,8 +94,8 @@ app.layout = html.Div([
     Input("countries", "value")
 )
 def update_similar_riders(rider, k=10, age_max=30, countries=""):
-    pop_indices = get_pop_indices(df_meta, age_max=age_max, countries=countries)
-    rider_i, D, I = find_closest_riders(arr_emb, pop_indices, rider=rider, riders_all=RIDERS, k=k)
+    pop_indices = update_index(index, arr_emb, df_meta, age_max=age_max, countries=countries)
+    rider_i, D, I = find_closest_riders(index, arr_emb, rider=rider, riders_all=RIDERS, k=k)
 
     # make main-rider output
     out_rider = make_rider_table(rider_i, arr_emb, df_meta, features)
