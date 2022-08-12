@@ -3,7 +3,10 @@ from dash import dash_table as dt
 from src.helpers import load_data, prepare_meta, prepare_embeddings, \
     get_pop_indices, find_closest_riders, make_rider_table, make_output_table
 
-app = Dash(__name__)
+app = Dash(__name__,
+           meta_tags=[
+               {"name": "viewport", "content": "width=device-width, initial-scale=1"}
+           ])
 server = app.server
 
 ############################## load & prepare data
@@ -82,7 +85,7 @@ app.layout = html.Div([
                  style={"margin-top": "15px", "padding-bottom": "10px", "width": "80%"})
 
     ])
-])
+], style={"backgroundColor": "white"})
 
 
 @app.callback(
