@@ -41,7 +41,7 @@ def get_pop_indices(df_meta, age_max, countries):
 
 def find_closest_riders(arr_emb, pop_indices, rider, riders_all, k=5):
     # get rider info to compare against
-    rider_i = riders_all.index(rider)  # list index, has nothing to do with the faiss library
+    rider_i = riders_all.index(rider)  # list index
     rider_i_emb = arr_emb[[rider_i]]
 
     arr_emb_pop = arr_emb[pop_indices]
