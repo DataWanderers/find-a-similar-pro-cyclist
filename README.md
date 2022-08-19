@@ -1,5 +1,5 @@
 ## What?
-A tiny [app](https://find-a-similar-pro-cyclist.herokuapp.com/) to find similar cyclists given a chosen rider. The selection can be filtered based on age and country.
+A tiny [app](https://find-a-similar-pro-cyclist.herokuapp.com/) to find similar cyclists given a chosen rider. The selection can be filtered based on country, rider characteristics, and age.
 
 ## Why?
 This little tool has several possible applications:
