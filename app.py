@@ -1,6 +1,7 @@
 import dash_bootstrap_components as dbc
 from dash import Dash, dcc, html, Input, Output
 from dash import dash_table as dt
+# from dash_bootstrap_templates import load_figure_template
 
 from src.helpers import load_data, prepare_meta, prepare_embeddings, \
     select_features, get_pop_indices, find_closest_riders, \
@@ -10,8 +11,10 @@ from src.helpers import load_data, prepare_meta, prepare_embeddings, \
 app = Dash(__name__,
            meta_tags=[
                {"name": "viewport", "content": "width=device-width, initial-scale=1"}],
-           external_stylesheets=[dbc.themes.MINTY]
+           external_stylesheets=[dbc.themes.SANDSTONE]  # UNITED, SANDSTONE, MORPH
            )
+# load_figure_template("LUX")
+
 server = app.server
 
 
@@ -43,7 +46,7 @@ app.layout = dbc.Container([
             ], style={"text-align": "right"})
         ])
     ], align="end"),
-    html.Hr(),
+    html.Hr(style={"margin-top": "0px", "opacity": "unset"}),
 
     dbc.Row([
         ### INPUT SELECTED RIDER ###

@@ -27,13 +27,15 @@ I compare the vector of the 13 characteristics for the chosen rider with the vec
 
 My initial attempt was with the [FAISS library](https://github.com/facebookresearch/faiss), but Heroku (cf. below) doesn't seem to support this library. I based myself on the first example in [here](https://www.pinecone.io/learn/faiss-tutorial/), using the exact L2 norm functionality, to find the riders with the smallest Euclidean distance (thus most similar) versus the base rider. The library is much more powerful than what I use of it, but this use case didn't require more complexity. Related code is found in the `bin` folder.
 
+The plot shown is called a spider (or radar, star, polar) chart, made with the Plotly library.
+
 ### App
 
 The tool is a **Python Dash app**. It is my first, and I just started with the official [tutorial](https://dash.plotly.com/installation), and then modified along until I reached my desired outcome. My development environment was PyCharm.
 
 It is made available on a free [Heroku](https://www.heroku.com/) server. I followed these [steps](https://www.angela1c.com/posts/2021/09/deploying-dash-apps-to-heroku/), but had to do some obligatory troubleshooting to get it up and running.
 
-Not going to lie, the app *is* pretty ugly (especially on mobile). I didn't bother to make it look nicer. Functionality first! To make it prettier, [this](https://dash-bootstrap-components.opensource.faculty.ai) would be a good resource I think.
+Not going to lie, the app is not the prettiest (especially on mobile) but it is functional. To make it prettier, further diving into [this](https://dash-bootstrap-components.opensource.faculty.ai) would be a good resource I think.
 
 ## Cool?
 
