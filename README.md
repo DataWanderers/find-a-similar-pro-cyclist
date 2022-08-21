@@ -1,5 +1,5 @@
 ## What?
-A tiny [app](https://find-a-similar-pro-cyclist.herokuapp.com/) to find similar cyclists given a chosen rider. The selection can be filtered based on age, country, rider characteristics.
+A tiny [app](https://find-a-similar-pro-cyclist.herokuapp.com/) to find similar cyclists given a chosen rider. The selection can be filtered based on age, country, and rider characteristics.
 
 ## Why?
 This little tool has several possible applications:
@@ -21,9 +21,7 @@ There is another stats dataset under the `data/` folder, from the final communit
 
 ### Analysis
 
-The most similar riders are computed using KNN (K nearest neighbors) search. There are only 5000+ riders in the database, so I could use a brute-force approach. 
-
-I compare the vector of the 13 characteristics for the chosen rider with the vectors for all riders, and return the nearest neighbors. Dead simple!
+The most similar riders are computed using KNN (K nearest neighbors) search. There are only 5000+ riders in the database, so I could use a brute-force approach. The algorithm compares the vector of the 13 characteristics for the chosen rider with the vectors for all riders, and return the nearest neighbors. Dead simple!
 
 My initial attempt was with the [FAISS library](https://github.com/facebookresearch/faiss), but Heroku (cf. below) doesn't seem to support this library. I based myself on the first example in [here](https://www.pinecone.io/learn/faiss-tutorial/), using the exact L2 norm functionality, to find the riders with the smallest Euclidean distance (thus most similar) versus the base rider. The library is much more powerful than what I use of it, but this use case didn't require more complexity. Related code is found in the `bin` folder.
 
