@@ -74,7 +74,7 @@ app.layout = dbc.Container([
         dbc.Col([
             html.Div([
                 html.Div([
-                    html.H6("Nbr. of similar cyclists"),
+                    html.H6("Similar cyclists"),
                     dcc.Input(
                         id="n_cyclists",
                         type="number",
