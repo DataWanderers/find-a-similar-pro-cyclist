@@ -1,6 +1,8 @@
 ## What?
 A tiny [app](https://find-a-similar-pro-cyclist.herokuapp.com/) to find similar cyclists given a chosen rider. The selection can be filtered based on age, country, and rider characteristics.
 
+<p align="center"> <img src="assets/app.png" alt="app"/> </p>
+
 ## Why?
 This little tool has several possible applications:
 - Gaming (e.g. Pro Cycling Manager or Wielermanager)
