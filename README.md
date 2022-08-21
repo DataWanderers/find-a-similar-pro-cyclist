@@ -1,5 +1,5 @@
 ## What?
-A tiny [app](https://find-a-similar-pro-cyclist.herokuapp.com/) to find similar cyclists given a chosen rider. The selection can be filtered based on country, rider characteristics, and age.
+A tiny [app](https://find-a-similar-pro-cyclist.herokuapp.com/) to find similar cyclists given a chosen rider. The selection can be filtered based on age, country, rider characteristics.
 
 ## Why?
 This little tool has several possible applications:
@@ -13,11 +13,11 @@ There are of course much more advanced tools to use for above purposes, but it c
 ## How?
 
 ### Data
-The data come from the final community-made WorldDB 2021 database for the game Pro Cycling Manager (PCM) 2020. It can be downloaded from the Steam Workshop. Other databases (and for other PCM versions), with stats that would be equally interesting, can be found when you register on [pcmdaily.com](https://pcmdaily.com/).
+The data come from the community-made [PCM.daily Expansion Pack 2022 u1](https://pcmdaily.com/infusions/pro_download_panel/download.php?did=1145) database (released June 28th, 2022) for the game Pro Cycling Manager (PCM) 2022. Note that as the database is an update from before the Tour de France 2022, it is not the most recent reflection of a rider's capabilities (for example, Jonas Vingegaard is not the utmost best climber). The cyclist's statistics are overall a very good representation nonetheless.
 
-In the database each rider has 13 characteristics representing various facets of cycling (such as climbing, sprinting, cobblestones, and so on). These stats have been extracted to Excel using this [tool](https://pcmdaily.com/infusions/pro_download_panel/download.php?did=1108), and are the sole basis for comparing riders.
+In the database each rider has 13 characteristics representing various facets of cycling (such as climbing, sprinting, cobblestones, and so on). The stats have been extracted from the database to Excel using this [tool](https://pcmdaily.com/infusions/pro_download_panel/download.php?did=1108), and are the sole basis for comparing riders.
 
-Note that as the database is an update from 2021, it is not the most recent reflection of a rider's capabilities (for example, Tour de France 2022 winner Jonas Vingegaard is not at all the best climber). The cyclist's statistics are overall a very good representation nonetheless.
+There is another stats dataset under the `data/` folder, from the final community-made WorldDB 2021 database for PCM 2020, downloaded from the Steam Workshop. Other databases (and for other PCM versions) can be found when you register on [pcmdaily.com](https://pcmdaily.com/).
 
 ### Analysis
 
@@ -35,7 +35,7 @@ The tool is a **Python Dash app**. It is my first, and I just started with the o
 
 It is made available on a free [Heroku](https://www.heroku.com/) server. I followed these [steps](https://www.angela1c.com/posts/2021/09/deploying-dash-apps-to-heroku/), but had to do some obligatory troubleshooting to get it up and running.
 
-Not going to lie, the app is not the prettiest (especially on mobile) but it is functional. To make it prettier, further diving into [this](https://dash-bootstrap-components.opensource.faculty.ai) would be a good resource I think.
+Not going to lie, the app is not the prettiest (especially on mobile), but it is functional. To make it prettier, further diving into [this](https://dash-bootstrap-components.opensource.faculty.ai) would be a good resource I think.
 
 ## Cool?
 

@@ -3,8 +3,8 @@ import numpy as np
 import plotly.graph_objects as go
 from sklearn.neighbors import NearestNeighbors
 
-def load_data(path="data/cyclists.xlsx"):
-    return pd.read_excel(path, engine="openpyxl")
+def load_data(path="data/cyclists_{year}.xlsx", year=2022):
+    return pd.read_excel(path.format(year=year), engine="openpyxl")
 
 def prepare_meta(df):
     df_meta = df.iloc[:, :6].copy()
@@ -60,7 +60,7 @@ def find_closest_riders(arr_emb, pop_indices, rider, riders_all, k=5):
 
     arr_emb_pop = arr_emb[pop_indices]
 
-    # search the k closest riders (drop first, will be rider_i)
+    # search k closest riders
     neigh = NearestNeighbors(n_neighbors=k)
     neigh.fit(arr_emb_pop)
 
@@ -70,11 +70,10 @@ def find_closest_riders(arr_emb, pop_indices, rider, riders_all, k=5):
     return rider_i, D, I, pop_indices
 
 def make_rider_table(idx, arr_emb, df_meta, features):
-    # get cycling stats
     stats = pd.DataFrame(arr_emb[idx], index=features).T
 
-    # construct DataFrame
-    df = pd.concat([df_meta.iloc[[idx]][["name", "age", "country"]].reset_index(drop=True), stats], axis=1)
+    df = pd.concat([df_meta.iloc[[idx]][["name", "age", "country"]].reset_index(drop=True),
+                    stats], axis=1)
 
     return df
 
@@ -83,11 +82,10 @@ def make_output_table(idxs, arr_emb, df_meta, features, pop_indices):
     df_meta = df_meta.iloc[pop_indices]
     arr_emb = arr_emb[pop_indices]
 
-    # get cycling stats
     stats = pd.DataFrame(arr_emb[idxs[0]], columns=features)
 
-    # construct DataFrame
-    df = pd.concat([df_meta.iloc[idxs[0]][["name", "age", "country"]].reset_index(drop=True), stats], axis=1)
+    df = pd.concat([df_meta.iloc[idxs[0]][["name", "age", "country"]].reset_index(drop=True),
+                    stats], axis=1)
 
     return df
 
@@ -113,7 +111,8 @@ def make_spider_plot(df_rider, df_riders_simil):  # also called radar charts
                 visible=True,
                 range=[50, 85]
             )),
-        showlegend=False
+        showlegend=False,
+        margin=dict(l=80, r=70, t=0, b=5)
     )
 
     return fig
