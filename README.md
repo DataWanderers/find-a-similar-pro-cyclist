@@ -19,13 +19,13 @@ The data come from the community-made [PCM.daily Expansion Pack 2022 u1](https:/
 
 In the database each rider has 13 characteristics representing various facets of cycling (such as climbing, sprinting, cobblestones, and so on). The stats have been extracted from the database to Excel using this [tool](https://pcmdaily.com/infusions/pro_download_panel/download.php?did=1108), and are the sole basis for comparing riders.
 
-There is another stats dataset under the `data/` folder, from the final community-made WorldDB 2021 database for PCM 2020, downloaded from the Steam Workshop. Other databases (and for other PCM versions) can be found when you register on [pcmdaily.com](https://pcmdaily.com/).
+There is another stats dataset under the `data` folder, from the final community-made WorldDB 2021 database for PCM 2020, downloaded from the Steam Workshop. Other databases (and for other PCM versions) can be found when you register on [pcmdaily.com](https://pcmdaily.com/).
 
 ### Analysis
 
 The most similar riders are computed using KNN (K nearest neighbors) search. There are only 5000+ riders in the database, so I could use a brute-force approach. The algorithm compares the vector of the 13 characteristics for the chosen rider with the vectors for all riders, and returns the nearest neighbors. Dead simple!
 
-My initial attempt was with the [FAISS library](https://github.com/facebookresearch/faiss), but Heroku (cf. below) doesn't seem to support this library. I based myself on the first example in [here](https://www.pinecone.io/learn/faiss-tutorial/), using the exact L2 norm functionality, to find the riders with the smallest Euclidean distance (thus most similar) versus the base rider. The library is much more powerful than what I use of it, but this use case didn't require more complexity. Related code is found in the `bin` folder.
+My initial attempt was with the [FAISS library](https://github.com/facebookresearch/faiss), but Heroku (cf. below) doesn't seem to support this library. I based myself on the first example in [here](https://www.pinecone.io/learn/faiss-tutorial/), using the exact L2 norm functionality, to find the riders with the smallest Euclidean distance (thus most similar) versus the base rider. The library is much more powerful, but this use case didn't require more complexity. Related code is found in the `bin` folder.
 
 The plot shown is called a spider (or radar, star, polar) chart, made with the Plotly library.
 
