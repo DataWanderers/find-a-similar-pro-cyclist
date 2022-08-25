@@ -3,7 +3,7 @@ A tiny [app](https://find-a-similar-pro-cyclist.herokuapp.com/) to find similar 
 
 <p align="center"> <img src="assets/app.png" alt="app"/> </p>
 
-**Note**: Starting November 28, 2022, the free Heroku resources will not be available anymore. Enjoy the app while you can!
+**Note**: Starting Nov. 28, 2022, the free Heroku resources are not available anymore. Enjoy the app while you can!
 
 ## Why?
 This little tool has several possible applications:
