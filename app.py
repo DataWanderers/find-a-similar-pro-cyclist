@@ -46,6 +46,7 @@ app.layout = dbc.Container([
             ], style={"text-align": "right"})
         ])
     ], align="end"),
+    
     html.Hr(style={"margin-top": "0px", "opacity": "unset"}),
 
     dbc.Row([
