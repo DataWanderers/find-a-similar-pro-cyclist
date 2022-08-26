@@ -29,6 +29,7 @@ COUNTRIES = df_meta["country"].unique().tolist()
 
 
 app.layout = dbc.Container([
+    
     ### HEADER ###
     dbc.Row([
         dbc.Col([
