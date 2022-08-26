@@ -41,4 +41,4 @@ Not going to lie, the app is not the prettiest (especially on mobile), but it is
 
 ## Cool?
 
-If you are interested in expanding the logic, or improving the app('s layout), get in touch!
+If you are interested in expanding the logic, or improving the app('s layout), get in touch! You can read [this article on Medium](https://medium.com/@sborms/a-python-app-to-scout-the-next-wout-van-aert-or-tadej-pogacar-1b98ec0c4bc6) for more background.
