@@ -73,6 +73,7 @@ app.layout = dbc.Container([
     dbc.Row([
         ### OTHER INPUTS ###
         dbc.Col([
+            
             html.Div([
                 html.Div([
                     html.H6("Similar cyclists"),
@@ -111,7 +112,7 @@ app.layout = dbc.Container([
                     )
                 ], style={})
             ], style={})
-
+            
         ], width=2),
 
         ### OUTPUT SIMILAR RIDERS ###
