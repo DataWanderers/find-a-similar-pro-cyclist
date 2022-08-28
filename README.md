@@ -17,7 +17,7 @@ There are of course much more advanced tools to use for above purposes, but it c
 ## How?
 
 ### Data
-The data comes from the community-made [PCM.daily Expansion Pack 2022 u1](https://pcmdaily.com/infusions/pro_download_panel/download.php?did=1145) database (released June 28th, 2022) for the game Pro Cycling Manager (PCM) 2022. Note that as the database is an update from before the Tour de France 2022, it is not the most recent reflection of a rider's capabilities (for example, Jonas Vingegaard is not the strongest best climber). The cyclist's statistics remain overall a very good representation.
+The data comes from the community-made [PCM.daily Expansion Pack 2022 u1](https://pcmdaily.com/infusions/pro_download_panel/download.php?did=1145) database (released June 28th, 2022) for the game Pro Cycling Manager (PCM) 2022. Note that as the database is an update from before the Tour de France 2022, it is not the most recent reflection of a rider's capabilities (for example, Jonas Vingegaard is not the strongest climber). The cyclist's statistics remain overall a very good representation.
 
 In the database each rider has 13 characteristics representing various facets of cycling (such as climbing, sprinting, cobblestones, and so on). The stats have been extracted from the database to Excel using this [tool](https://pcmdaily.com/infusions/pro_download_panel/download.php?did=1108), and are the sole basis for comparing riders.
 
