@@ -1,9 +1,8 @@
 import dash_bootstrap_components as dbc
 from dash import Dash, dcc, html, Input, Output
-from dash import dash_table as dt
 # from dash_bootstrap_templates import load_figure_template
 
-from src.helpers import load_data, prepare_meta, prepare_embeddings, \
+from src.utils import load_data, prepare_meta, prepare_embeddings, \
     select_features, get_pop_indices, find_closest_riders, \
     make_rider_table, make_output_table, make_spider_plot
 
@@ -21,7 +20,7 @@ server = app.server
 ############################## load & prepare data
 df = load_data()
 df_meta = prepare_meta(df)
-arr_emb, features = prepare_embeddings(df)
+arr_emb, FEATURES = prepare_embeddings(df)
 
 RIDERS = df_meta["name"].tolist()
 COUNTRIES = df_meta["country"].unique().tolist()
@@ -106,7 +105,7 @@ app.layout = dbc.Container([
                 html.Div([
                     html.H6("Characteristics"),
                     dcc.Dropdown(
-                        features,
+                        FEATURES,
                         "",  # default value
                         multi=True,
                         id="features"
@@ -144,11 +143,11 @@ app.layout = dbc.Container([
 )
 def update_similar_riders(rider, k=10, age_max=30, countries="", features_in=""):
     # apply filtering
-    arr_emb_, features_out = select_features(arr_emb, features, features_in)
-    pop_indices = get_pop_indices(df_meta, age_max=age_max, countries=countries)
+    arr_emb_, features_out = select_features(arr_emb, FEATURES, features_in)
+    pop_indices = get_pop_indices(df_meta, age_max, countries)
 
     # find the closest riders
-    rider_i, D, I, pop_indices = find_closest_riders(arr_emb_, pop_indices, rider=rider, riders_all=RIDERS, k=k)
+    rider_i, D, I, pop_indices = find_closest_riders(arr_emb_, pop_indices, rider, RIDERS, k)
 
     # make main rider output
     out_rider = make_rider_table(rider_i, arr_emb_, df_meta, features_out)

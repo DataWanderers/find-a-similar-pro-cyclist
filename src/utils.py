@@ -116,36 +116,3 @@ def make_spider_plot(df_rider, df_riders_simil):  # also called radar charts
     )
 
     return fig
-
-############################## not used, but useful
-
-def compute_cosine_similarity(A, j=None):
-    """
-    This computes cosine similarities. To compute distances, you could use scipy.spatial.distance_matrix().
-    """
-    ## Approach 1 ##
-    # matrix vs. matrix
-    similarity = np.dot(A, A.T)
-
-    # inverse squared magnitude of preference vectors (number of occurrences)
-    inv_square_mag = 1 / np.diag(similarity)
-
-    # if it does not occur, set inverse magnitude to zero (instead of inf)
-    inv_square_mag[np.isinf(inv_square_mag)] = 0
-
-    # inverse of the magnitude
-    inv_mag = np.sqrt(inv_square_mag)
-
-    # cosine similarity (elementwise multiply by inverse magnitudes)
-    cosine = similarity * inv_mag
-
-    # compute similarity scores
-    similarity_scores = cosine.T * inv_mag
-
-    ## Approach 2 ##
-    if j is not None:
-        a1 = A[j]
-        a2 = np.delete(A, j, axis=0)
-        similarity_scores = a2.dot(a1) / (np.linalg.norm(a2, axis=1) * np.linalg.norm(a1))
-
-    return similarity_scores
