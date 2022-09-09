@@ -1,3 +1,5 @@
+[![Medium article](https://img.shields.io/badge/Medium-View%20on%20Medium-red?logo=medium)](https://medium.com/@sborms/a-python-app-to-scout-the-next-wout-van-aert-or-tadej-pogacar-1b98ec0c4bc6)
+
 ## What?
 A tiny [app](https://find-a-similar-pro-cyclist.herokuapp.com/) to find similar cyclists given a chosen rider. The selection can be filtered based on age, country, and rider characteristics.
 
@@ -41,4 +43,4 @@ Not going to lie, the app is not the prettiest (especially on mobile), but it is
 
 ## Cool?
 
-If you are interested in expanding the logic, or improving the app('s layout), get in touch! You can read [this article on Medium](https://medium.com/@sborms/a-python-app-to-scout-the-next-wout-van-aert-or-tadej-pogacar-1b98ec0c4bc6) for more background.
+If you are interested in expanding the logic, or improving the app('s layout), get in touch! You can read the article on Medium (see top) for more background.
