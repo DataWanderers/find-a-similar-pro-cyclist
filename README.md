@@ -35,7 +35,7 @@ The plot shown is called a spider (or radar, star, polar) chart, made with the P
 
 ### App
 
-The tool is a **Python Dash app**. It is my first, and I just started with the official [tutorial](https://dash.plotly.com/installation), and then modified along until I reached my desired outcome. My development environment was PyCharm.
+The tool is a **Python Dash app**. It is my first, and I just started with the official [tutorial](https://dash.plotly.com/installation), then modified along until I reached my desired outcome. My development environment was PyCharm.
 
 It is made available on a free [Heroku](https://www.heroku.com/) server. I followed these [steps](https://www.angela1c.com/posts/2021/09/deploying-dash-apps-to-heroku/), but had to do some obligatory troubleshooting to get it up and running.
 
