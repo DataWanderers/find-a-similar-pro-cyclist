@@ -6,6 +6,7 @@ A tiny [app](https://find-a-similar-pro-cyclist.herokuapp.com/) to find similar 
 <p align="center"> <img src="assets/app.png" alt="app"/> </p>
 
 **Note**: Since November 28, 2022, the free Heroku resources are sadly not available anymore. Don't worry, you can still enjoy the app locally!
+**Note 2**: Check out the [sborms/cyclingsimilarity.com](https://github.com/sborms/cyclingsimilarity.com) repository for a more extensive implementation of this idea.
 
 ## Why?
 This little tool has several possible applications:
