@@ -1,0 +1,10 @@
+.gitignore
+*.pyc
+**/__pycache__
+pyproject.toml
+README.md
+runtime.txt
+assets
+bin
+notebooks
+venv
