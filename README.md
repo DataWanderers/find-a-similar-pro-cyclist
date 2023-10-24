@@ -9,6 +9,8 @@ A tiny [app](https://find-a-similar-pro-cyclist.herokuapp.com/) to find similar 
 
 **Note 2**: Check out the [sborms/cyclingsimilarity.com](https://github.com/sborms/cyclingsimilarity.com) repository for a more extensive implementation of this idea.
 
+**Note 3**: Tried to put back the app online on either Vercel or PythonAnywhere but the free plans were not sufficient (damn you too large virtual environments!).
+
 ## Why?
 This little tool has several possible applications:
 - Gaming (e.g. Pro Cycling Manager or Wielermanager)

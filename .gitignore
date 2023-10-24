@@ -1,3 +1,4 @@
+*.zip
 /venv39
 /.idea
 __pycache__

@@ -4,8 +4,8 @@ import plotly.graph_objects as go
 from sklearn.neighbors import NearestNeighbors
 
 
-def load_data(path="data/cyclists_{year}.xlsx", year=2022):
-    return pd.read_excel(path.format(year=year), engine="openpyxl")
+def load_data(path="data/cyclists_{year}.csv", year=2022):
+    return pd.read_csv(path.format(year=year), encoding="latin-1", sep=";")
 
 
 def prepare_meta(df):

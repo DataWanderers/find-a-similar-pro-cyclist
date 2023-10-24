@@ -13,15 +13,12 @@ from src.utils import (
     select_features,
 )
 
-# from dash_bootstrap_templates import load_figure_template
-
 
 app = Dash(
     __name__,
     meta_tags=[{"name": "viewport", "content": "width=device-width, initial-scale=1"}],
     external_stylesheets=[dbc.themes.SANDSTONE],  # UNITED, SANDSTONE, MORPH
 )
-# load_figure_template("LUX")
 
 server = app.server
 
