@@ -11,6 +11,8 @@ A tiny [app](https://find-a-similar-pro-cyclist.herokuapp.com/) to find similar 
 
 **Note 3**: Tried to put back the app online on either Vercel or PythonAnywhere but the free plans were not sufficient (damn you too large virtual environments!).
 
+**Note 4**: It's a bingo! The app is now available on Azure App Service for free, see the [instructions](#deployment).
+
 ## Why?
 This little tool has several possible applications:
 - Gaming (e.g. Pro Cycling Manager or Wielermanager)
@@ -44,6 +46,38 @@ The tool is a **Python Dash app**. It is my first, and I just started with the o
 It is made available on a free [Heroku](https://www.heroku.com/) server. I followed these [steps](https://www.angela1c.com/posts/2021/09/deploying-dash-apps-to-heroku/), but had to do some obligatory troubleshooting to get it up and running.
 
 Not going to lie, the app is not the prettiest (especially on mobile), but it is functional. To make it prettier, further diving into [this](https://dash-bootstrap-components.opensource.faculty.ai) would be a good resource I think.
+
+### Deployment
+
+The app can be deployed on Azure App Service for free, see this [quickstart](https://learn.microsoft.com/en-us/azure/app-service/quickstart-python) and below commands to create the application. Give it some minutes to show up.
+
+First log in to your Azure account:
+```bash
+az login
+```
+
+Set some variables:
+```bash
+$rg = "rg-find-a-similar-pro-cyclist"
+$app = "find-a-similar-pro-cyclist"
+$location = "westeurope"
+```
+
+Then create the web application (note that the `F1` indicates to use the free plan) and adjust the startup command:
+```bash
+az webapp up --runtime PYTHON:3.9 --sku F1 --logs --name $app --resource-group $rg --location $location
+az webapp config set --resource-group $rg --name $app --startup-file "gunicorn --bind=0.0.0.0 --timeout 600 app:server"
+```
+
+To see the logs in your terminal, do:
+```bash
+az webapp log tail --name $app --resource-group $rg
+```
+
+In case you want do delete the app, run this:
+```bash
+az group delete --name $rg --no-wait
+```
 
 ## Cool?
 

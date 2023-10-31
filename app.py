@@ -13,6 +13,7 @@ from src.utils import (
     select_features,
 )
 
+REPO_URL = "https://github.com/DataWanderers/find-a-similar-pro-cyclist"
 
 app = Dash(
     __name__,
@@ -21,7 +22,6 @@ app = Dash(
 )
 
 server = app.server
-
 
 ############################## load & prepare data
 df = load_data()
@@ -61,7 +61,7 @@ app.layout = dbc.Container(
                         html.Div(
                             [
                                 dcc.Markdown(
-                                    "Find more info on GitHub [here](https://github.com/DataWanderers/find-a-similar-pro-cyclist)."
+                                    f"Find more info on GitHub [here]({REPO_URL})."
                                 )
                             ],
                             style={"text-align": "right"},

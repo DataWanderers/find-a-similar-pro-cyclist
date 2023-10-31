@@ -1,0 +1,10 @@
+{
+    "publishOptions": {
+        "exclude": [
+            "assets/",
+            "bin/",
+            "notebooks/",
+            "venv39/"
+        ]
+  }
+}
