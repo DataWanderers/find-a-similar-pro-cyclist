@@ -13,7 +13,7 @@ A tiny [app](https://find-a-similar-pro-cyclist.azurewebsites.net/) to find simi
 
 **Note 4**: It's a bingo! The app is now available on Azure App Service for free, see the [instructions](#deployment).
 
-**Note 5**: "Error 403 - This web app is stopped." Azure was fed up with supporting this crazy popular app for free, but it was nice while it lasted.
+**Note 5**: "Error 403 - This web app is stopped." After many months, Azure was fed up with supporting this crazy popular app for free but it was nice while it lasted.
 
 ## Why?
 This little tool has several possible applications:
@@ -67,8 +67,18 @@ $location = "westeurope"
 
 Then create the web application (note that the `F1` indicates to use the free plan) and adjust the startup command:
 ```bash
-az webapp up --runtime PYTHON:3.9 --sku F1 --logs --name $app --resource-group $rg --location $location
-az webapp config set --resource-group $rg --name $app --startup-file "gunicorn --bind=0.0.0.0 --timeout 600 app:server"
+az webapp up \
+    --runtime PYTHON:3.9 \
+    --sku F1 \
+    --logs \
+    --name $app \
+    --resource-group $rg \
+    --location $location
+
+az webapp config set \
+    --resource-group $rg \
+    --name $app \
+    --startup-file "gunicorn --bind=0.0.0.0 --timeout 600 app:server"
 ```
 
 To see the logs in your terminal, do:
