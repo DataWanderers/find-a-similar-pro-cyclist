@@ -9,9 +9,11 @@ A tiny [app](https://find-a-similar-pro-cyclist.azurewebsites.net/) to find simi
 
 **Note 2**: Check out the [sborms/cyclingsimilarity.com](https://github.com/sborms/cyclingsimilarity.com) repository for a more extensive implementation of this idea.
 
-**Note 3**: Tried to put back the app online on either Vercel or PythonAnywhere but the free plans were not sufficient (damn you too large virtual environments!).
+**Note 3**: Tried to put the app back online on either Vercel or PythonAnywhere but the free plans were not sufficient (damn you too large virtual environments!).
 
 **Note 4**: It's a bingo! The app is now available on Azure App Service for free, see the [instructions](#deployment).
+
+**Note 5**: "Error 403 - This web app is stopped." Azure was fed up with supporting this crazy popular app for free, but it was nice while it lasted.
 
 ## Why?
 This little tool has several possible applications:
